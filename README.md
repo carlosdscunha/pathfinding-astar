@@ -32,12 +32,9 @@ Além da aplicação interativa, o repositório conta com um **relatório acadê
 A organização dos diretórios do repositório está estruturada da seguinte forma:
 
 ```text
-grupo-ia/
+pathfinding-astar/
 ├── godot/                      # Projeto interativo desenvolvido na Godot Engine 4
 │   ├── cenas/                  # Cenas da aplicação (Gameplay, Telas de Replay, Final, etc.)
-│   ├── compilado/              # Executáveis já compilados do jogo
-│   │   ├── win/                # Executável para Windows Desktop
-│   │   └── linux/              # Executável para Linux Desktop
 │   ├── scripts/                # Scripts em GDScript com a lógica da aplicação
 │   │   ├── a_estrela.gd        # Implementação do Algoritmo A* e suas 3 heurísticas
 │   │   ├── estado.gd           # Representação dos estados da busca e cálculo de heurísticas
@@ -78,9 +75,10 @@ O ambiente de navegação consiste em uma malha (*grid*) de 6x6 na qual cada cé
 
 ### Algoritmo A* e Heurísticas Utilizadas
 O agente inteligente calcula a rota ideal utilizando o algoritmo A* ($f(n) = g(n) + h(n)$) configurado com três abordagens heurísticas para comparação:
-1. **Manhattan:** $h(n) = |x_1 - x_2| + |y_1 - y_2|$
-2. **Euclidiana:** $h(n) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
-3. **Chebyshev:** $h(n) = \max(|x_1 - x_2|, |y_1 - y_2|)$
+
+1. **Manhattan:** $\displaystyle h(n) = |x_1 - x_2| + |y_1 - y_2|$
+2. **Euclidiana:** $\displaystyle h(n) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
+3. **Chebyshev:** $\displaystyle h(n) = \max(|x_1 - x_2|, |y_1 - y_2|)$
 
 ---
 
@@ -89,9 +87,9 @@ O agente inteligente calcula a rota ideal utilizando o algoritmo A* ($f(n) = g(n
 ### 1. Executando o Jogo (Godot Engine)
 
 #### Opção A: Executáveis Pré-compilados (Sem necessidade do Godot)
-Caso prefira rodar diretamente sem instalar a Godot Engine, o projeto já possui os executáveis compilados na pasta `godot/compilado/`:
-- **Windows:** Acesse `godot/compilado/win/` e execute o arquivo `.exe`.
-- **Linux:** Acesse `godot/compilado/linux/` e execute o arquivo correspondente.
+Caso prefira rodar diretamente sem instalar a Godot Engine, o projeto já possui os executáveis compilados na [Release Versão](https://github.com/carlosdscunha/pathfinding-astar/releases/tag/v1.0):
+- **Windows:** Baixe o zip `pathfinding-astar-windows.zip` e execute o arquivo `.exe`.
+- **Linux:** Baixe o zip `pathfinding-astar-linux.zip` e execute o arquivo correspondente.
 
 #### Opção B: Executando via Godot Engine (Código-Fonte)
 1. Baixe e instale a **Godot Engine** v4.3 ou superior em [godotengine.org](https://godotengine.org/).
